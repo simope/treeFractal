@@ -18,7 +18,7 @@ draw_trunk() {
     do
         for col in "${st_points[@]}"
         do
-            matrix[$row,$col]="1"
+            matrix[$row,$col]="|"
         done
     done
 }
@@ -38,8 +38,8 @@ draw_branches() {
     		right=$((col-inbtw))
     		left=$((col+inbtw))
     		
-    		matrix[$row,$right]="1"
-    		matrix[$row,$left]="1"
+    		matrix[$row,$right]="\\"
+    		matrix[$row,$left]="/"
     		if (($row == $row_start+1))
     		then
     			st_points+=("$right")
